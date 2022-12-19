@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="exercise.AppTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-12-12T18:46:01" hostname="vivac-VB" time="0.322">
+  <properties/>
+  <testcase name="testUser1()" classname="exercise.AppTest" time="0.29"/>
+  <testcase name="testUser2()" classname="exercise.AppTest" time="0.005"/>
+  <testcase name="testUser3()" classname="exercise.AppTest" time="0.004"/>
+  <testcase name="testUsersAll()" classname="exercise.AppTest" time="0.009"/>
+  <testcase name="testUserNotFound1()" classname="exercise.AppTest" time="0.005"/>
+  <testcase name="testUserNotFound2()" classname="exercise.AppTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Dec 12, 2022 9:46:01 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-nio-auto-1"]
+Dec 12, 2022 9:46:01 PM org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+INFO: Using a shared selector for servlet write/read
+Dec 12, 2022 9:46:01 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service [Tomcat]
+Dec 12, 2022 9:46:01 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet engine: [Apache Tomcat/8.5.69]
+Dec 12, 2022 9:46:01 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-nio-auto-1-34771"]
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Dec 12, 2022 9:46:02 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-nio-auto-1-34771"]
+Dec 12, 2022 9:46:02 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service [Tomcat]
+Dec 12, 2022 9:46:02 PM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesObjectStreamClassCaches
+WARNING: When running on Java 9 or later you need to add "--add-opens=java.base/java.io=null" to the JVM command line arguments to enable ObjectStream cache memory leak protection. Alternatively, you can suppress this warning by disabling ObjectStream class cache memory leak protection.
+Dec 12, 2022 9:46:02 PM org.apache.catalina.loader.WebappClassLoaderBase checkThreadLocalsForLeaks
+WARNING: When running on Java 9 or later you need to add "--add-opens=java.base/java.lang=null" to the JVM command line arguments to enable ThreadLocal memory leak detection. Alternatively, you can suppress this warning by disabling ThreadLocal memory leak detection.
+Dec 12, 2022 9:46:02 PM org.apache.catalina.loader.WebappClassLoaderBase clearReferencesRmiTargets
+WARNING: When running on Java 9 or later you need to add "--add-opens=java.rmi/sun.rmi.transport=null" to the JVM command line arguments to enable RMI Target memory leak detection. Alternatively, you can suppress this warning by disabling RMI Target memory leak detection.
+Dec 12, 2022 9:46:02 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-nio-auto-1-34771"]
+]]></system-err>
+</testsuite>
