@@ -15,6 +15,7 @@
         <div class="container">
             <a href="/users">Все пользователи</a>
             <!-- BEGIN -->
+            <div>${error}</div>
             <form action="/users/new" method="post">
                 <div class="mb-3">
                     <label>Имя</label>

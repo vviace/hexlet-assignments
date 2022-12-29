@@ -138,15 +138,19 @@ public class UsersServlet extends HttpServlet {
 
         // BEGIN
         Map<String, String> user = new HashMap<>();
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+
         user.put("id", getNextId());
-        user.put("firstName", request.getParameter("firstName"));
-        user.put("lastName", request.getParameter("lastName"));
+        user.put("firstName", firstName);
+        user.put("lastName", lastName);
         user.put("email", request.getParameter("email"));
-        System.out.println(user.get("id"));
-        if (request.getParameter("firstName") == null || request.getParameter("lastName") == null) {
+
+        if (firstName == null || lastName == null || lastName.isEmpty()) {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/new.jsp");
             request.setAttribute("user", user);
             response.setStatus(422);
+            request.setAttribute("error", "invalid input");
             requestDispatcher.forward(request, response);
             return;
         }
@@ -196,7 +200,7 @@ public class UsersServlet extends HttpServlet {
         userUpdate.put("firstName", firstName);
         userUpdate.put("lastName", lastName);
         userUpdate.put("email", request.getParameter("email"));
-        System.out.println("hello!");
+
 
         if ((firstName == null || firstName.isEmpty()) || (lastName == null || lastName.isEmpty())) {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/edit.jsp");
