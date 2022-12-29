@@ -106,8 +106,8 @@ public class UsersServlet extends HttpServlet {
     private void showUser(HttpServletRequest request,
                          HttpServletResponse response)
                  throws IOException, ServletException {
-        String id = getId(request);
 
+        String id = getId(request);
         Map<String, String> user = getUserById(id);
 
         if (user == null) {
@@ -146,7 +146,7 @@ public class UsersServlet extends HttpServlet {
         user.put("lastName", lastName);
         user.put("email", request.getParameter("email"));
 
-        if (firstName == null || lastName == null || lastName.isEmpty()) {
+        if ((firstName == null || firstName.isEmpty()) || (lastName == null || lastName.isEmpty())) {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/new.jsp");
             request.setAttribute("user", user);
             response.setStatus(422);
