@@ -58,11 +58,9 @@ public class SessionServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String password = request.getParameter("password");
         String email = request.getParameter("email");
-        System.out.println("email :" + email );
         Map<String, String> user = users.findByEmail(email);
-        System.out.println("user :" + user );
 
-        if (user != null) {
+        if (user != null && user.get("password") != null && user.get("password").equals(password) || user.get("password") == null) {
             session.setAttribute("user", user);
             session.setAttribute("flash", "Вы успешно вошли");
             response.sendRedirect("/");
@@ -82,6 +80,7 @@ public class SessionServlet extends HttpServlet {
         // BEGIN
         HttpSession session = request.getSession();
         session.removeAttribute("userId");
+        session.setAttribute("flash", "Выход");
         response.sendRedirect("/");
         // END
     }
