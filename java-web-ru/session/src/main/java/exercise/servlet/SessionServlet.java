@@ -80,7 +80,7 @@ public class SessionServlet extends HttpServlet {
         // BEGIN
         HttpSession session = request.getSession();
         session.removeAttribute("userId");
-        session.setAttribute("flash", "Выход");
+        session.setAttribute("flash", "Вы успешно вышли");
         response.sendRedirect("/");
         // END
     }
