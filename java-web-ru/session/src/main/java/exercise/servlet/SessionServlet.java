@@ -67,9 +67,7 @@ public class SessionServlet extends HttpServlet {
             response.sendRedirect("/");
         } else {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.jsp");
-            user = new HashMap<>();
-            user.put("email", email);
-            request.setAttribute("user", user);
+
             session.setAttribute("flash", "unknown login or password");
             response.setStatus(422);
             requestDispatcher.forward(request, response);
@@ -82,10 +80,9 @@ public class SessionServlet extends HttpServlet {
                  throws IOException {
 
         // BEGIN
-         HttpSession session = request.getSession();
-         // Удаляем атрибут из сессии
-         session.removeAttribute("userId");
-         response.sendRedirect("/");
+        HttpSession session = request.getSession();
+        session.removeAttribute("userId");
+        response.sendRedirect("/");
         // END
     }
 }
