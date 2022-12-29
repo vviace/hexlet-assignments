@@ -34,7 +34,7 @@ public class Users {
             user.put("firstName", faker.address().firstName());
             user.put("lastName", faker.address().lastName());
             user.put("email", faker.internet().emailAddress());
-            user.put("password", "frtg");
+            user.put("password", "password");
             users.add(user);
         }
     }

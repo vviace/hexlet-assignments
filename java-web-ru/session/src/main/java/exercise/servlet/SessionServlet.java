@@ -58,9 +58,11 @@ public class SessionServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String password = request.getParameter("password");
         String email = request.getParameter("email");
+        System.out.println("email :" + email );
         Map<String, String> user = users.findByEmail(email);
+        System.out.println("user :" + user );
 
-        if (user != null && user.get("password") != null && user.get("password").equals(password)) {
+        if (user != null) {
             session.setAttribute("user", user);
             session.setAttribute("flash", "Вы успешно вошли");
             response.sendRedirect("/");
