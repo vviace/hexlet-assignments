@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.RequestDispatcher;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import static exercise.App.getUsers;
@@ -61,13 +62,15 @@ public class SessionServlet extends HttpServlet {
         Map<String, String> user = users.findByEmail(email);
 
         if (user != null && user.get("password").equals(password)) {
-
             session.setAttribute("userId", user.get("id"));
             session.setAttribute("flash", "Вы успешно вошли");
             response.sendRedirect("/");
         } else {
             RequestDispatcher requestDispatcher =
                     request.getRequestDispatcher("/login.jsp");
+            user = new HashMap<>();
+            user.put("email", email);
+            request.setAttribute("user", user);
             session.setAttribute("flash", "Неверные логин или пароль");
             response.setStatus(422);
             requestDispatcher.forward(request, response);
