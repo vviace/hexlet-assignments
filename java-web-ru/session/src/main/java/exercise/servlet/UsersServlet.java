@@ -193,7 +193,7 @@ public class UsersServlet extends HttpServlet {
         Map<String, String> updatedUserData = users.build(firstName, lastName, email);
 
         if (firstName.isEmpty() || lastName.isEmpty()) {
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/new.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/edit.jsp");
             request.setAttribute("user", updatedUserData);
             session.setAttribute("flash", "Имя и Фамилия не могут быть пустыми");
             response.setStatus(422);
