@@ -63,7 +63,7 @@ public class SessionServlet extends HttpServlet {
         if (user != null && user.get("password") != null
                 && user.get("password").equals(password)
                 || user.get("password") == null) {
-            session.setAttribute("user", user);
+            session.setAttribute("userId", user.get("id"));
             session.setAttribute("flash", "Вы успешно вошли");
             response.sendRedirect("/");
         } else {
