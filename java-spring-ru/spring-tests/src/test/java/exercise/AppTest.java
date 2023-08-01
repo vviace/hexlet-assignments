@@ -125,7 +125,7 @@ public class AppTest {
                 .perform(
                         patch("/people/1")
                                 .contentType(MediaType.APPLICATION_JSON)
-                                .content("{\"firstName\": \"Diego\", \"lastName\": \"Maradona\"}")
+                                .content("{\"firstName\": \"Diego\", \"lastName\": \"Maradona\", \"email\": \"Maradona@ya.ru\"}")
                 )
                 .andReturn()
                 .getResponse();
@@ -135,6 +135,7 @@ public class AppTest {
         Person personDb = personRepository.findById(1);
         assertThat(personDb.getFirstName()).isEqualTo("Diego");
         assertThat(personDb.getLastName()).isEqualTo("Maradona");
+        assertThat(personDb.getEmail()).isEqualTo("Maradona@ya.ru");
     }
 
     @Test
