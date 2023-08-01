@@ -119,11 +119,11 @@ public class AppTest {
     // BEGIN
     @Test
     void testUpdatesPerson() throws Exception {
-//        var existingUserEmail = "jack@mail.com";
-//        var existingUserId = TestUtils.getUserIdByEmail(mockMvc, existingUserEmail);
+        var existingUserEmail = "jack@mail.com";
+        var existingUserId = TestUtils.getUserIdByEmail(mockMvc, existingUserEmail);
         MockHttpServletResponse responsePost = mockMvc
                 .perform(
-                        patch("/people/1")
+                        patch("/people/{id}", existingUserId)
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content("{\"firstName\": \"Diego\", \"lastName\": \"Maradona\", " +
                                         "\"email\": \"Maradona@ya.ru\"}")
@@ -141,8 +141,10 @@ public class AppTest {
 
     @Test
     void testDeletePerson() throws Exception {
+        var existingUserEmail = "jack@mail.com";
+        var existingUserId = TestUtils.getUserIdByEmail(mockMvc, existingUserEmail);
         MockHttpServletResponse responsePost = mockMvc
-                .perform(delete("/people/1"))
+                .perform(delete("/people/{id}", existingUserId))
                 .andReturn()
                 .getResponse();
 
