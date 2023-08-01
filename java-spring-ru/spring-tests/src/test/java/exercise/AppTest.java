@@ -133,7 +133,7 @@ public class AppTest {
 
         assertThat(responsePost.getStatus()).isEqualTo(200);
 
-        Person personDb = personRepository.findById(1);
+        Person personDb = personRepository.findById(existingUserId);
         assertThat(personDb.getFirstName()).isEqualTo("Diego");
         assertThat(personDb.getLastName()).isEqualTo("Maradona");
         assertThat(personDb.getEmail()).isEqualTo("Maradona@ya.ru");
